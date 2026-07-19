@@ -5,6 +5,37 @@ no database, no tracking — just files you edit.
 
 ## Adding new artwork
 
+### Option A: the script (recommended)
+
+Run this from the project folder, pointing it at the photo wherever it is on your
+computer (Desktop, Downloads, Photos export, etc.):
+
+```bash
+python3 scripts/add_artwork.py ~/Desktop/photo.jpg \
+  --title "Rainbow Dragon" \
+  --age 6 \
+  --date 2026-07-15 \
+  --medium "Crayon and marker" \
+  --description "A dragon that breathes rainbows instead of fire."
+```
+
+It copies the photo into `images/art/` and adds the entry to
+`js/artworks-data.js` for you — no manual editing needed.
+
+You can also just run `python3 scripts/add_artwork.py ~/Desktop/photo.jpg` with no
+other flags and it'll ask you for the title, age, date, etc. one at a time.
+
+Once you've added a few real pieces, remove the placeholder "Sample:" entries:
+
+```bash
+python3 scripts/add_artwork.py --remove-samples
+```
+
+(You can also pass `--remove-samples` together with an add command to add a piece
+and clean up the samples in one step.)
+
+### Option B: editing the file by hand
+
 1. Put the photo in `images/art/` (e.g. `images/art/rainbow-dragon.jpg`).
 2. Open `js/artworks-data.js` and add a new entry to the `ARTWORKS` list:
 
