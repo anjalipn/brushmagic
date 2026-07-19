@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Keeps this private family site out of search engine indexes by default.
+       Remove this line only if you want the site to be publicly searchable. -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Brushmagic &mdash; Ellie's Art Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <span class="brush">🎨</span>
+    <h1 class="site-title">Brush<span class="accent">magic</span></h1>
+    <p class="site-subtitle">
+      <!-- EDIT ME: change the name / tagline -->
+      A little gallery of Ellie's masterpieces, from crayon scribbles to full-blown art.
+    </p>
+    <svg class="squiggle" viewBox="0 0 160 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 14C20 2 34 2 50 14C66 2 80 2 96 14C112 2 126 2 142 14C150 8 154 8 158 14"
+            stroke="#FF6B6B" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+  </header>
+
+  <main class="container">
+    <div class="filters" id="filters"></div>
+    <div class="gallery" id="gallery"></div>
+
+    <section class="about-section" id="about">
+      <!-- EDIT ME: replace with a real photo -->
+      <!-- <img class="about-photo" src="images/profile/ellie.jpg" alt="Ellie"> -->
+      <div class="about-photo placeholder">🖍️</div>
+
+      <div>
+        <h2>About the artist</h2>
+        <!-- EDIT ME: it's usually safest to use a first name only for a public site -->
+        <p>
+          Ellie is 6 years old and has been drawing since she could hold a crayon.
+          She loves dragons, rainbows, and drawing our family pet.
+        </p>
+        <ul class="fun-facts">
+          <li><span class="emoji">🎨</span> Favorite colors: turquoise and sunshine yellow</li>
+          <li><span class="emoji">✏️</span> Favorite medium: markers and watercolor</li>
+          <li><span class="emoji">🐉</span> Draws the most: dragons and gardens</li>
+          <li><span class="emoji">⭐</span> Dream: to have her own art show one day!</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="privacy-note">
+      This is a private family website. It uses no cookies, no analytics, and no
+      third-party trackers — the only thing stored here is the artwork itself.
+    </p>
+    <p>Made with love for a little artist. &copy; <span id="year"></span></p>
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content" id="lightbox-body"></div>
+  </div>
+
+  <script src="js/artworks-data.js"></script>
+  <script src="js/gallery.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
