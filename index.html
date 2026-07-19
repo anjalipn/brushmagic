@@ -18,15 +18,24 @@
       <!-- EDIT ME: change the name / tagline -->
       A little gallery of Ellie's masterpieces, from crayon scribbles to full-blown art.
     </p>
-    <svg class="squiggle" viewBox="0 0 160 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2 14C20 2 34 2 50 14C66 2 80 2 96 14C112 2 126 2 142 14C150 8 154 8 158 14"
-            stroke="#FF6B6B" stroke-width="3" stroke-linecap="round"/>
+    <svg class="squiggle" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="squiggleGrad" x1="0" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#FF6B6B"/>
+          <stop offset="50%" stop-color="#8B6FD6"/>
+          <stop offset="100%" stop-color="#2FB8AE"/>
+        </linearGradient>
+      </defs>
+      <path d="M2 15C22 3 38 3 56 15C74 3 90 3 108 15C126 3 142 3 160 15C170 8 176 8 182 12C188 16 192 16 198 12"
+            stroke="url(#squiggleGrad)" stroke-width="3.5" stroke-linecap="round"/>
     </svg>
   </header>
 
   <main class="container">
     <div class="filters" id="filters"></div>
     <div class="gallery" id="gallery"></div>
+
+    <div class="section-divider"></div>
 
     <section class="about-section" id="about">
       <!-- EDIT ME: replace with a real photo -->
@@ -49,6 +58,8 @@
       </div>
     </section>
   </main>
+
+  <div class="section-divider"></div>
 
   <footer class="site-footer">
     <p class="privacy-note">

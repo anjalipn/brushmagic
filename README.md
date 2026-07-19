@@ -72,13 +72,22 @@ Then visit http://localhost:8000
 
 ## Publishing it for free
 
-Any static hosting works since there's no backend. Easiest options:
+Any static hosting works since there's no backend. This repo is deployed via **Netlify**,
+connected to the private GitHub repo (`anjalipn/brushmagic`) — every push to `main`
+auto-deploys. `netlify.toml` tells Netlify there's no build step, just serve the
+files as-is.
 
-- **Netlify Drop** — go to https://app.netlify.com/drop and drag this whole folder in.
-  Gives you a free URL in seconds; you can add a custom domain later.
-- **GitHub Pages** — push this folder to a GitHub repo and enable Pages in the repo
-  settings.
-- **Vercel** — `vercel deploy` from this folder (needs the Vercel CLI).
+Note: GitHub Pages was intentionally avoided because its free tier requires the
+repo to be *public*. Netlify (and Vercel) can deploy from a *private* repo on their
+free tiers, so the source stays private while the live site is still public (any
+hosted website with a real domain is inherently public — that part's unavoidable).
+
+### Custom domain
+
+In Netlify: Site settings → Domain management → Add custom domain → enter your
+domain (e.g. `www.brushmagic.art`). Netlify will show the exact DNS records to add
+at your registrar (or you can delegate nameservers to Netlify for fully automatic
+setup, including a free HTTPS certificate).
 
 ## Privacy notes (this site involves a child's photos)
 
@@ -93,3 +102,8 @@ Any static hosting works since there's no backend. Easiest options:
 - If you want it more private than "unlisted," most static hosts (Netlify, Vercel)
   offer free password-protection on the free tier, or you can keep the link
   unlisted and only share it with family.
+- Photos taken on a phone often have GPS coordinates embedded in their EXIF
+  metadata. Strip this before adding a photo to `images/art/` (e.g. on Mac:
+  Preview → Tools → Show Inspector → the "i" (info) tab shows/lets you remove
+  location data; most Photos export options also have a "include location" toggle
+  you can turn off).
