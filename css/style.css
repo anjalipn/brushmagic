@@ -431,8 +431,3 @@ a { color: inherit; }
   color: var(--ink-soft);
   font-size: 0.82rem;
 }
-
-.site-footer .privacy-note {
-  max-width: 480px;
-  margin: 0 auto 8px;
-}
